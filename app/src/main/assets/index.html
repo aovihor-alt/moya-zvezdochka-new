@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Моя звёздочка</title>
+<style>
+body{margin:0;background:linear-gradient(160deg,#ffe4ef,#fff5f8);font-family:Arial,sans-serif;color:#8c4265;text-align:center;padding:25px 18px}
+h1{font-size:32px;color:#d65b91;margin-top:35px}
+.card{background:#ffffffd9;border-radius:25px;padding:22px;margin:18px auto;max-width:430px;box-shadow:0 5px 20px #e9a8c555}
+button{border:0;border-radius:25px;background:#ec8bb3;color:white;padding:15px 20px;font-size:16px;margin:8px;width:90%}
+p{font-size:18px;line-height:1.5}
+.heart{font-size:55px}
+</style>
+</head>
+<body>
+<div class="heart">💗</div>
+<h1>Привет, моя Звёздочка!</h1>
+<p>Это маленький мир, который Тоша создал специально для тебя, Настя.</p>
+<div class="card">
+<h2>🐱 Для моей любимой</h2>
+<p id="message">Ты делаешь мой мир светлее. Я очень тебя люблю!</p>
+<button onclick="hug()">Нажми, если скучаешь 💕</button>
+<button onclick="love()">Почему я тебя люблю 💗</button>
+<button onclick="surprise()">Маленький сюрприз 🎁</button>
+</div>
+<div class="card">
+<h2>Наше начало ⭐</h2>
+<p>11 октября 2026 года</p>
+<p>Твой Тоша, котёнок любимый ❤️</p>
+</div>
+<script>
+const messages=[
+"Ты моя самая любимая звёздочка! ⭐",
+"Хочу обнять тебя крепко-крепко! 🫂",
+"Твоя улыбка — моё любимое чудо. 💗",
+"Я счастлив, что ты есть у меня. 🐱",
+"Ты делаешь каждый мой день особенным. ❤️"
+];
+function hug(){document.getElementById('message').innerText="Крепко-крепко обнимаю тебя, моя звёздочка! 🫂💗"}
+function love(){document.getElementById('message').innerText="За твою улыбку, нежность, доброту и за то, что ты просто есть. Люблю тебя, Настя! ❤️"}
+function surprise(){document.getElementById('message').innerText=messages[Math.floor(Math.random()*messages.length)]}
+</script>
+</body>
+</html>

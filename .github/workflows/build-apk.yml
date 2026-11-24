@@ -15,12 +15,11 @@ jobs:
         with:
           distribution: temurin
           java-version: '17'
-      - name: Setup Android SDK
-        uses: android-actions/setup-android@v3
-      - name: Install SDK packages
+      - name: Install Android SDK packages
         run: |
-          yes | sdkmanager --licenses
-          sdkmanager "platform-tools" "platforms;android-35" "build-tools;35.0.0"
+          SDKMANAGER="$(find "$ANDROID_HOME/cmdline-tools" -type f -name sdkmanager | head -n 1)"
+          yes | "$SDKMANAGER" --licenses
+          "$SDKMANAGER" "platform-tools" "platforms;android-35" "build-tools;35.0.0"
       - name: Install Gradle
         run: |
           curl -L https://services.gradle.org/distributions/gradle-8.9-bin.zip -o gradle.zip
